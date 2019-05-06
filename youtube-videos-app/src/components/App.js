@@ -1,11 +1,17 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import SearchBar from './SearchBar';
 import VideoList from './VideoList';
 import youtube from '../api';
+import VideoDetail from './VideoDetail';
 
 function App() {
   const [videos, setVideos] = useState([]);
+  const [selectedVideo, setSelectedVideo] = useState(null);
+
+  useEffect(() => {
+    onTermSubmit('legia warszawa');
+  }, []);
 
   const onTermSubmit = async term => {
     const response = await youtube.get('/search', {
@@ -15,11 +21,17 @@ function App() {
     });
 
     setVideos(response.data.items);
+    setSelectedVideo(response.data.items[1]);
+  };
+
+  const onVideoSlect = video => {
+    setSelectedVideo(video);
   };
   return (
     <MainWrapper>
       <SearchBar onTermSubmit={onTermSubmit} />
-      <VideoList videos={videos} />
+      <VideoDetail video={selectedVideo} />
+      <VideoList videos={videos} onVideoSlect={onVideoSlect} />
     </MainWrapper>
   );
 }

@@ -30,6 +30,7 @@ const Form = styled.form`
   box-shadow: 3px 4px 6px 4px #1212;
   margin: 0 auto;
   margin-top: 2.6rem;
+  margin-bottom: 2.6rem;
   label {
     font-size: 1.5rem;
   }
