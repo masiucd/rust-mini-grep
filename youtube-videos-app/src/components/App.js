@@ -1,32 +1,27 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import SearchBar from './SearchBar';
 import VideoList from './VideoList';
 import youtube from '../api';
 
-class App extends React.Component {
-  state = {
-    videos: [],
-  };
+function App() {
+  const [videos, setVideos] = useState([]);
 
-  onTermSubmit = async term => {
+  const onTermSubmit = async term => {
     const response = await youtube.get('/search', {
       params: {
         q: term,
       },
     });
 
-    this.setState({ videos: response.data.items });
+    setVideos(response.data.items);
   };
-
-  render() {
-    return (
-      <MainWrapper>
-        <SearchBar onTermSubmit={this.onTermSubmit} />
-        <VideoList videos={this.state.videos} />
-      </MainWrapper>
-    );
-  }
+  return (
+    <MainWrapper>
+      <SearchBar onTermSubmit={onTermSubmit} />
+      <VideoList videos={videos} />
+    </MainWrapper>
+  );
 }
 
 export default App;
