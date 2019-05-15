@@ -14,6 +14,9 @@ export default function Header() {
         <li>
           <Link to="/diceroller">DiceRoller</Link>
         </li>
+        <li>
+          <Link to="/iconlist">IconList</Link>
+        </li>
       </ul>
     </Nav>
   );
