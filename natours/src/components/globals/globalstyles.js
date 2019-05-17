@@ -1,4 +1,4 @@
-import { createGlobalStyle } from 'styled-components';
+import styled, { createGlobalStyle } from 'styled-components';
 
 export const colours = {
   light_green: '#7ed56f',
@@ -7,6 +7,7 @@ export const colours = {
   greenrgba1: 'rgba(126, 213, 111, 0.8)',
   greenrgba2: ' rgba(40, 180, 131, 0.8)',
   greenrgba3: ' rgba(116, 313, 111, 0.8)',
+  transparentColour1: 'rgba(0,0,0,.2)',
 };
 
 export const GlobalStyle = createGlobalStyle`
