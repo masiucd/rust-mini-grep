@@ -20,6 +20,12 @@ export default function Header() {
         <li>
           <Link to="/ballgame">Lottery</Link>
         </li>
+        <li>
+          <Link to="/coinflipper">CoinFlipper</Link>
+        </li>
+        <li>
+          <Link to="/colours">Colurs</Link>
+        </li>
       </ul>
     </Nav>
   );
