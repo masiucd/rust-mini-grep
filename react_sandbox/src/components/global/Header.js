@@ -26,6 +26,15 @@ export default function Header() {
         <li>
           <Link to="/colours">Colurs</Link>
         </li>
+        <li>
+          <Link to="/events">Events</Link>
+        </li>
+        <li>
+          <Link to="/buttonlist">Button list</Link>
+        </li>
+        <li>
+          <Link to="/numberlist">Number list</Link>
+        </li>
       </ul>
     </Nav>
   );

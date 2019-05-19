@@ -5,7 +5,10 @@ import Header from './components/global/Header';
 import BoxContainer from './components/colourgrid/BoxContainer';
 import BallGame from './components/lottery/BallGame';
 import CoinFlipper from './components/coinflipper/CoinFlipper';
+import Events from './components/events/Events';
 import IconList from './components/iconList/IconList';
+import ButtonList from './components/buttonlist/ButtonList';
+import NumberList from './components/numberlist/Numberlist';
 import './App.css';
 import { AppWrapper, GlobalStyle } from './components/global/globalstyles';
 
@@ -21,6 +24,9 @@ function App() {
           <Route path="/ballgame" component={BallGame} />
           <Route path="/coinflipper" component={CoinFlipper} />
           <Route path="/colours" component={BoxContainer} />
+          <Route path="/events" component={Events} />
+          <Route path="/buttonlist" component={ButtonList} />
+          <Route path="/numberlist" component={NumberList} />
         </Switch>
       </AppWrapper>
     </BrowserRouter>
