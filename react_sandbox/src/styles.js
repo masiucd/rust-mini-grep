@@ -1,8 +1,8 @@
 import styled, { css, keyframes } from 'styled-components';
 
 const sizes = {
-  desktop: 992,
-  tablet: 768,
+  desktop: 1092,
+  tablet: 968,
   phone: 576,
 };
 

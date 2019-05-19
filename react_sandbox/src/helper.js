@@ -49,3 +49,13 @@ export const coinsSide = [
   { side: 'heads', imgSrc: 'https://tinyurl.com/react-coin-heads-jpg' },
   { side: 'tails', imgSrc: 'https://tinyurl.com/react-coin-tails-jpg' },
 ];
+
+export const todosList = [
+  { text: 'Go out withe the dog', completed: false },
+  { text: 'Get some food', completed: false },
+  { text: 'Go to the gym', completed: false },
+  { text: 'cook some food', completed: false },
+  { text: "visit the parent's house", completed: false },
+  { text: 'Watch the last episode of Game of thrones', completed: false },
+  { text: 'Get a good nice sleep', completed: false },
+];

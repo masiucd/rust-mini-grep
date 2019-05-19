@@ -9,6 +9,7 @@ import Events from './components/events/Events';
 import IconList from './components/iconList/IconList';
 import ButtonList from './components/buttonlist/ButtonList';
 import NumberList from './components/numberlist/Numberlist';
+import TodoList from './components/todolist/TodoList';
 import './App.css';
 import { AppWrapper, GlobalStyle } from './components/global/globalstyles';
 
@@ -27,6 +28,7 @@ function App() {
           <Route path="/events" component={Events} />
           <Route path="/buttonlist" component={ButtonList} />
           <Route path="/numberlist" component={NumberList} />
+          <Route path="/todolist" component={TodoList} />
         </Switch>
       </AppWrapper>
     </BrowserRouter>
