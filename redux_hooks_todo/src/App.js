@@ -1,10 +1,12 @@
 import React from 'react';
+import { GlobalStyle, PageWrapper } from './components/globals/globalStyles';
 import TodoList from './components/TodoList';
 
 export default function App() {
   return (
-    <div>
+    <PageWrapper>
+      <GlobalStyle />
       <TodoList />
-    </div>
+    </PageWrapper>
   );
 }

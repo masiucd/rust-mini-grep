@@ -3,10 +3,12 @@ import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 import App from './App';
-import rootReducer from './reducers';
+import todoReducer from './reducers/todoReducer';
+import { initialState } from './actions';
 
 const store = createStore(
-  rootReducer,
+  todoReducer,
+  initialState,
   window.devToolsExtension && window.devToolsExtension()
 );
 

@@ -1,16 +1,15 @@
-import { ADD_TODO, TOGGLE_TODO, DELETE_TODO } from '../types';
-import { initialState } from '../actions';
+import { ADD_TODO, DELETE_TODO, TOGGLE_TODO } from '../types';
 
-export default (state = initialState, action) => {
+export default (state, action) => {
   switch (action.type) {
     case ADD_TODO:
       return {
-        state,
+        ...state,
         todos: [...state.todos, action.payload],
       };
     case TOGGLE_TODO:
       return {
-        state,
+        ...state,
         todos: state.todos.map(todo =>
           todo.id === action.payload
             ? { ...todo, completed: !todo.completed }
@@ -19,7 +18,7 @@ export default (state = initialState, action) => {
       };
     case DELETE_TODO:
       return {
-        state,
+        ...state,
         todos: state.todos.filter(todo => todo.id !== action.payload),
       };
     default:
