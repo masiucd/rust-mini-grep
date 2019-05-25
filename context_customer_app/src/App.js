@@ -4,6 +4,7 @@ import { GlobalStyle } from './global/Globalstyles';
 import Header from './components/Header';
 import { Container, Row } from './global/grid';
 import { randomStuff, funnyTitle } from './helper';
+import { Prvider } from './context';
 import Contacts from './components/Contacts';
 
 export default function App() {
