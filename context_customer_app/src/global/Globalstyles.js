@@ -7,6 +7,7 @@ export const mainColurs = {
   tomato: '#FF5C57',
   goldenBrown: '#9E7F65',
   white: '#fff',
+  transparentLight: 'rgba(229,229,229,.2)',
 };
 
 export const GlobalStyle = createGlobalStyle`

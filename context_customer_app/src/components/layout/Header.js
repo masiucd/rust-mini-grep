@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
-import { mainColurs } from '../global/Globalstyles';
-import { Container } from '../global/grid';
+import { mainColurs } from '../../global/Globalstyles';
+import { Container } from '../../global/grid';
 
 const Header = ({ title }) => {
   const app = 'ss';
