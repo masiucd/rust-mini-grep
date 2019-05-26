@@ -82,6 +82,7 @@ export const Card = styled.div`
     h3 {
       border-bottom: ${props => (props.border ? '1px solid #fff' : '')};
       font-size: ${props => props.size};
+      text-align: ${props => (props.center ? 'center' : '')};
     }
     p {
       font-size: 1.8rem;
@@ -94,6 +95,13 @@ export const Card = styled.div`
     .delete-icon {
       float: right;
       color: ${mainColurs.tomato};
+    }
+    .dropIcon {
+      cursor: pointer;
+      &:hover {
+        transition: 0.3s linear;
+        color: ${mainColurs.goldenBrown};
+      }
     }
   }
 `;
