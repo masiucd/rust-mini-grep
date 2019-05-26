@@ -1,6 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
+import { Home } from 'styled-icons/boxicons-regular/Home';
+import { Plus } from 'styled-icons/boxicons-regular/Plus';
+import { QuestionMark } from 'styled-icons/boxicons-regular/QuestionMark';
 import { mainColurs } from '../../global/Globalstyles';
 import { Container } from '../../global/grid';
 
@@ -13,7 +16,30 @@ const Header = ({ title }) => {
         <nav>
           <ul>
             <li>
-              <Link to="/">Home</Link>
+              <Link to="/">
+                Home{' '}
+                <span>
+                  <Home size="25" />
+                </span>{' '}
+              </Link>
+            </li>
+            <li>
+              <Link to="/about">
+                About{' '}
+                <span>
+                  {' '}
+                  <QuestionMark size="25" />{' '}
+                </span>{' '}
+              </Link>
+            </li>
+            <li>
+              <Link to="/contact/add">
+                Add Contact{' '}
+                <span>
+                  {' '}
+                  <Plus size="25" />{' '}
+                </span>{' '}
+              </Link>
             </li>
           </ul>
         </nav>
@@ -23,7 +49,7 @@ const Header = ({ title }) => {
 };
 
 const HeaderWrap = styled.div`
-  background: ${mainColurs.goldenBrown};
+  background: ${mainColurs.transparentLight};
   color: ${mainColurs.white};
   max-height: 8rem;
   h4 {
@@ -41,9 +67,11 @@ const HeaderWrap = styled.div`
       a {
         color: ${mainColurs.white};
         font-size: 1.7rem;
-        position: absolute;
-        top: 17px;
-        right: 30px;
+        /* position: absolute; */
+        /* top: 17px; */
+        /* right: 30px; */
+        bottom: 44px;
+        position: relative;
         &:hover {
           transition: all ease-in-out 0.3s;
           color: ${mainColurs.blackLight};

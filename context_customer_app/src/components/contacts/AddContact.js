@@ -60,6 +60,9 @@ export default class AddContact extends Component {
       phone: (prev.phone = ''),
       errors: (prev.errors = {}),
     }));
+
+    // redirect home
+    this.props.history.push('/');
   }
 
   toggleShow() {

@@ -11,6 +11,9 @@ export default class Contacts extends Component {
           const { contacts } = value;
           return (
             <ContactsWrapper>
+              <h3>
+                <span>Contacts</span> List
+              </h3>
               {contacts.map(contact => (
                 <Contact key={contact.id} contact={contact} />
               ))}
@@ -24,5 +27,12 @@ export default class Contacts extends Component {
 
 const ContactsWrapper = styled.div`
   margin: 0 auto;
+  h3 {
+    text-align: center;
+    font-size: 3.6rem;
+    span {
+      color: #262730;
+    }
+  }
   /* text-align: center; */
 `;

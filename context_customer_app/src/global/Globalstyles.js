@@ -26,7 +26,9 @@ export const GlobalStyle = createGlobalStyle`
     @import url('https://fonts.googleapis.com/css?family=Mandali&display=swap');
     font-family: 'Mandali', sans-serif;
     color: ${mainColurs.white};
-    background: ${mainColurs.blackPrimary};
+    background:  linear-gradient(89deg, ${mainColurs.blackPrimary}, ${
+  mainColurs.goldenBrown
+});
     height: 100vh;
   }
   ul{
