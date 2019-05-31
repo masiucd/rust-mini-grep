@@ -14,6 +14,8 @@ export const Card = styled.div`
     position: relative;
     h2 {
       font-size: 2.3rem;
+      border-bottom: 1px solid ${colours.yellowDD};
+      padding: 0.4rem;
     }
     .arrow-down {
       position: absolute;
@@ -24,9 +26,34 @@ export const Card = styled.div`
   }
 
   .card-body {
+    position: relative;
+    p {
+      font-size: 1.8rem;
+      padding: 0.4rem;
+    }
+    span:nth-child(1) {
+      position: absolute;
+      top: 5px;
+      left: 95%;
+    }
+    span:nth-child(2) {
+      position: absolute;
+      top: 5px;
+      left: 90%;
+    }
+    span {
+      cursor: pointer;
+      transition: all 0.3s ease-in-out;
+      &:hover {
+        color: ${colours.blueDark};
+        transition: all 0.3s ease-in-out;
+      }
+    }
   }
   &:hover {
     transition: all 0.3s ease-in-out;
     box-shadow: 2px -7px 30px -1px rgba(0, 0, 0, 0.75);
+    transform: scale(1.1);
+    z-index: 1;
   }
 `;

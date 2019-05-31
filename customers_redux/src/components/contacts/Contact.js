@@ -2,21 +2,29 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { DownArrowAlt } from 'styled-icons/boxicons-regular/DownArrowAlt';
+import { Edit2 } from 'styled-icons/feather/Edit2';
+import { Delete } from 'styled-icons/material/Delete';
+import { deleteContact } from '../../actions/customerActions';
 import { Card } from '../../styles/styled-comp/Card';
 
-export default class Contact extends Component {
+class Contact extends Component {
   constructor() {
     super();
     this.state = {
       show: false,
     };
     this.toggleShow = this.toggleShow.bind(this);
+    this.handleDelete = this.handleDelete.bind(this);
   }
 
   toggleShow() {
     this.setState(prev => ({
       show: !prev.show,
     }));
+  }
+
+  handleDelete(id) {
+    this.props.deleteContact(id);
   }
 
   render() {
@@ -34,7 +42,16 @@ export default class Contact extends Component {
               <>
                 {' '}
                 <div className="card-body">
-                  {' '}
+                  <span>
+                    {' '}
+                    <Delete
+                      size="45"
+                      onClick={this.handleDelete.bind(this, id)}
+                    />{' '}
+                  </span>{' '}
+                  <span>
+                    <Edit2 size="45" />{' '}
+                  </span>{' '}
                   <p>Email: {email} </p> <p>Phone: {phone}</p>{' '}
                   <p> Username: {username}</p> <p>WebSite: {website}</p>{' '}
                 </div>{' '}
@@ -46,3 +63,15 @@ export default class Contact extends Component {
     );
   }
 }
+
+Contact.propTypes = {
+  contact: PropTypes.object.isRequired,
+  deleteContact: PropTypes.func.isRequired,
+};
+
+const mapStateToProps = state => ({ contacts: state.contacts.contact });
+
+export default connect(
+  mapStateToProps,
+  { deleteContact }
+)(Contact);

@@ -27,9 +27,12 @@ export const GlobalStyle = createGlobalStyle`
     color: #fefefe;
     background: linear-gradient(80deg, ${colours.blueDark} 0%,${
   colours.blueDark
-} 50%,${colours.blueDark} 50%,${colours.yellowDD} 50%,${
-  colours.yellowD
-} 100%); /* W3C */
-
+} 50%,${colours.blueDark} 50%,${colours.yellowDD} 50%,${colours.yellowD} 100%);
+  }
+  .contacts-wrapper{
+    button {
+      display: block;
+      margin: 2rem auto;
+    }
   }
 `;
