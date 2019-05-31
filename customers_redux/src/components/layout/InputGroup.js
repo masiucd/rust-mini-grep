@@ -1,7 +1,6 @@
 /* eslint-disable import/no-extraneous-dependencies */
 import React from 'react';
 import PropTypes from 'prop-types';
-import { shake } from '../../styles/animation';
 
 export default function InputGroup({
   name,

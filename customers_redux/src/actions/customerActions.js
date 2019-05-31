@@ -30,3 +30,8 @@ export const getContact = id => async dispatch => {
   const res = await api.get(`/users/${id}`);
   dispatch({ type: GET_CONTACT, payload: res.data });
 };
+
+export const addContact = contact => async dispatch => {
+  const res = await api.post(`/users`, contact);
+  dispatch({ type: ADD_CONTACT, payload: res.data });
+};

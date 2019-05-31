@@ -46,13 +46,13 @@ class Contact extends Component {
                   <span>
                     {' '}
                     <Delete
-                      size="45"
+                      size="35"
                       onClick={this.handleDelete.bind(this, id)}
                     />{' '}
                   </span>{' '}
                   <span>
                     <Link to={`contact/edit/${id}`}>
-                      <Edit2 size="45" />{' '}
+                      <Edit2 size="35" />{' '}
                     </Link>
                   </span>{' '}
                   <p>Email: {email} </p> <p>Phone: {phone}</p>{' '}

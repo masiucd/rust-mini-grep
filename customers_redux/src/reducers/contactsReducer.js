@@ -18,7 +18,7 @@ export default (state = initialState, action) => {
     case GET_CONTACT:
       return {
         ...state,
-        contacts: action.payload,
+        contact: action.payload,
       };
     case DELETE_GONTACT:
       return {
@@ -35,6 +35,11 @@ export default (state = initialState, action) => {
             ? (contact = action.payload)
             : contact
         ),
+      };
+    case ADD_CONTACT:
+      return {
+        ...state,
+        contacts: [action.payload, ...state.contacts],
       };
     default:
       return state;

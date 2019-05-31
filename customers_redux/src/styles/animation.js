@@ -17,3 +17,8 @@ export const shake = keyframes`
   transform: translate3d(4px, 0, 0);
 }
 `;
+
+export const fadeIn = keyframes`
+0%   { opacity: 0; }
+100% { opacity: 1; }
+`;

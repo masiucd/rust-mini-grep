@@ -22,6 +22,17 @@ class Edit extends Component {
     this.handleChange = this.handleChange.bind(this);
   }
 
+  UNSAFE_componentWillReceiveProps(nextProps, nextState) {
+    const { name, email, phone, username, website } = nextProps.contact;
+    this.setState({
+      name,
+      email,
+      phone,
+      username,
+      website,
+    });
+  }
+
   componentDidMount() {
     const { id } = this.props.match.params;
     this.props.getContact(id);
@@ -36,6 +47,18 @@ class Edit extends Component {
     }
     if (email === '') {
       this.setState({ errors: { email: 'Email is Required' } });
+      return;
+    }
+    if (phone === '') {
+      this.setState({ errors: { phone: 'Phone is Required' } });
+      return;
+    }
+    if (username === '') {
+      this.setState({ errors: { username: 'Username is Required' } });
+      return;
+    }
+    if (website === '') {
+      this.setState({ errors: { website: 'Website is Required' } });
       return;
     }
 
@@ -87,6 +110,33 @@ class Edit extends Component {
           value={email}
           handleChange={this.handleChange}
           error={errors.email}
+        />
+        <InputGroup
+          type="text"
+          placeholder="enter your phone number"
+          label="Phone"
+          name="phone"
+          value={phone}
+          handleChange={this.handleChange}
+          error={errors.phone}
+        />
+        <InputGroup
+          type="text"
+          placeholder="enter your username"
+          label="Username"
+          name="username"
+          value={username}
+          handleChange={this.handleChange}
+          error={errors.username}
+        />
+        <InputGroup
+          type="text"
+          placeholder="enter your website"
+          label="Website"
+          name="website"
+          value={website}
+          handleChange={this.handleChange}
+          error={errors.website}
         />
         <FormBtn type="submit">submit</FormBtn>
       </Form>

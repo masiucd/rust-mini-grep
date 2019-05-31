@@ -1,14 +1,21 @@
 import styled from 'styled-components';
 import { colours } from '../globalStyles';
+import { media } from '../media';
+import { fadeIn } from '../animation';
 
 export const Card = styled.div`
-  max-width: 40%;
+  max-width: 75%;
   background: ${colours.grey};
   border-radius: 1rem;
   padding: 3rem 2.4rem;
+  animation-name: ${fadeIn};
+  animation-duration: 2s;
+  animation-timing-function: ease;
+  animation-delay: 0s;
   margin: 1rem auto;
   transition: all 0.3s ease-in-out;
   box-shadow: -17px 26px 22px -19px rgba(0, 0, 0, 0.75);
+
   .card-header {
     border-bottom: 1px solid ${colours.yellowL};
     position: relative;
@@ -27,19 +34,25 @@ export const Card = styled.div`
 
   .card-body {
     position: relative;
+    display: flex;
+    flex-direction: column;
     p {
       font-size: 1.8rem;
       padding: 0.4rem;
     }
     span:nth-child(1) {
       position: absolute;
-      top: 5px;
+      top: 0;
       left: 95%;
+      ${media.phone` top: 70px; left: 87%;`};
+      align-self: flex-end;
     }
     span:nth-child(2) {
       position: absolute;
-      top: 5px;
-      left: 86%;
+      top: 0;
+      left: 90%;
+      ${media.phone` top: 70px; left: 70%;`};
+      align-self: flex-end;
     }
     span {
       cursor: pointer;
