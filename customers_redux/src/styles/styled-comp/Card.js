@@ -2,10 +2,10 @@ import styled from 'styled-components';
 import { colours } from '../globalStyles';
 
 export const Card = styled.div`
-  max-width: 60%;
+  max-width: 40%;
   background: ${colours.grey};
   border-radius: 1rem;
-  padding: 2rem;
+  padding: 3rem 2.4rem;
   margin: 1rem auto;
   transition: all 0.3s ease-in-out;
   box-shadow: -17px 26px 22px -19px rgba(0, 0, 0, 0.75);
@@ -39,13 +39,22 @@ export const Card = styled.div`
     span:nth-child(2) {
       position: absolute;
       top: 5px;
-      left: 90%;
+      left: 86%;
     }
     span {
       cursor: pointer;
       transition: all 0.3s ease-in-out;
       &:hover {
-        color: ${colours.blueDark};
+        color: ${colours.yellowDD};
+        transition: all 0.3s ease-in-out;
+      }
+    }
+    a,
+    svg {
+      text-decoration: none;
+      color: ${colours.blueDark};
+      &:hover {
+        color: ${colours.yellowDD};
         transition: all 0.3s ease-in-out;
       }
     }

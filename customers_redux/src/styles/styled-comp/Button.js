@@ -24,3 +24,10 @@ export const BtnPrimary = styled.button`
     box-shadow: 2px 6px 3px 3px rgba(0, 0, 0, 0.45);
   }
 `;
+
+export const FormBtn = styled(BtnPrimary)`
+  background: ${colours.blueDark};
+  width: 40%;
+  display: block;
+  margin: 2rem auto;
+`;

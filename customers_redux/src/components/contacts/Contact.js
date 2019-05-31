@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import { DownArrowAlt } from 'styled-icons/boxicons-regular/DownArrowAlt';
 import { Edit2 } from 'styled-icons/feather/Edit2';
 import { Delete } from 'styled-icons/material/Delete';
+import { Link } from 'react-router-dom';
 import { deleteContact } from '../../actions/customerActions';
 import { Card } from '../../styles/styled-comp/Card';
 
@@ -50,7 +51,9 @@ class Contact extends Component {
                     />{' '}
                   </span>{' '}
                   <span>
-                    <Edit2 size="45" />{' '}
+                    <Link to={`contact/edit/${id}`}>
+                      <Edit2 size="45" />{' '}
+                    </Link>
                   </span>{' '}
                   <p>Email: {email} </p> <p>Phone: {phone}</p>{' '}
                   <p> Username: {username}</p> <p>WebSite: {website}</p>{' '}
@@ -69,7 +72,7 @@ Contact.propTypes = {
   deleteContact: PropTypes.func.isRequired,
 };
 
-const mapStateToProps = state => ({ contacts: state.contacts.contact });
+const mapStateToProps = state => ({ contacts: state.contact.contact });
 
 export default connect(
   mapStateToProps,

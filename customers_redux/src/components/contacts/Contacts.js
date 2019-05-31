@@ -46,7 +46,7 @@ Contacts.propTypes = {
   contacts: PropTypes.array.isRequired,
 };
 
-const mapStateToProps = state => ({ contacts: state.contacts.contacts });
+const mapStateToProps = state => ({ contacts: state.contact.contacts });
 export default connect(
   mapStateToProps,
   { getContacts }

@@ -20,3 +20,13 @@ export const deleteContact = id => async dispatch => {
     dispatch({ type: DELETE_GONTACT, payload: id });
   }
 };
+
+export const updateContact = contact => async dispatch => {
+  const res = await api.put(`/users/${contact.id}`, contact);
+  dispatch({ type: UPDATE_CONTACT, payload: res.data });
+};
+
+export const getContact = id => async dispatch => {
+  const res = await api.get(`/users/${id}`);
+  dispatch({ type: GET_CONTACT, payload: res.data });
+};

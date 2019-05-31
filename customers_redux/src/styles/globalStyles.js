@@ -29,10 +29,17 @@ export const GlobalStyle = createGlobalStyle`
   colours.blueDark
 } 50%,${colours.blueDark} 50%,${colours.yellowDD} 50%,${colours.yellowD} 100%);
   }
+
   .contacts-wrapper{
     button {
       display: block;
       margin: 2rem auto;
     }
+  }
+  a{
+    text-decoration: none;
+  }
+  ul{
+    list-style:none;
   }
 `;
