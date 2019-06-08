@@ -18,15 +18,43 @@ export default class TodoList extends Component {
     this.setState({ todos: completed });
   };
 
+  addTodo = newTodo => {
+    this.setState({
+      todos: [...this.state.todos, newTodo],
+    });
+  };
+
+  remove = id => {
+    this.setState({
+      todos: this.state.todos.filter(t => t.id !== id),
+    });
+  };
+
+  update = (id, updatedTask) => {
+    const updatedTodos = this.state.todos.map(todo => {
+      if (todo.id === id) {
+        return { ...todo, task: updatedTask };
+      }
+      return todo;
+    });
+    this.setState({ todos: updatedTodos });
+  };
+
   render() {
     const { todos: todosState } = this.state;
     const todos = todosState.map(todo => (
-      <Todo key={todo.id} todo={todo} completeTodo={this.completeTodo} />
+      <Todo
+        key={todo.id}
+        todo={todo}
+        completeTodo={this.completeTodo}
+        remove={this.remove}
+        update={this.update}
+      />
     ));
 
     return (
       <div className="todo-wrapper">
-        <h1>TodoList</h1>
+        <TodoForm addTodo={this.addTodo} onChange={this.onChange} />
         {todos}
       </div>
     );

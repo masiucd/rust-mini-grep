@@ -14,7 +14,8 @@ html {
 }
 
 body{
-  color: $black;
+  color: $white;
+  height: 100vh;
   background: $yellow;
   background: -webkit-linear-gradient(to right, $redD, $yellow);
   background: linear-gradient(to right, $red, $blue);
