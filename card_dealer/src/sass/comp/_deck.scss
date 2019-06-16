@@ -1,0 +1,35 @@
+.game {
+    h1{
+      text-align: center;
+      font-size: 6rem;
+      letter-spacing: 0.5rem;
+      span {
+        color: $hoki;
+      }
+    }
+    button {
+      display: block;
+      margin: 0 auto;
+      padding: .7rem 1.1rem;
+      border: 2px solid $white;
+      background: transparent;
+      color: $white;
+      font-size: 1.9rem;
+      width: 30%;
+      transition: .3s ease-in-out;
+      position: relative;
+      &:hover{
+        background: $electic;
+      }
+      &:active{
+        top: .4rem;
+      }
+    }
+  .cards {
+    position: relative;
+    padding: 2rem;
+    width: 60%;
+    margin: 0 auto;
+  }
+
+}

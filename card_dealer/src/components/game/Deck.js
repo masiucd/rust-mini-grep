@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import api from '../../axios';
+import Card from './Card';
 
 export default class Deck extends Component {
   state = {
@@ -38,12 +39,20 @@ export default class Deck extends Component {
   };
 
   render() {
+    const { drawn } = this.state;
     return (
-      <div>
-        <h1>Card Dealer</h1>
+      <div className="game">
+        <h1>
+          Card <span>Dealer</span>
+        </h1>
         <button className="get-card" onClick={this.getCard}>
           Get Card
         </button>
+        <div className="cards">
+          {drawn.map(card => (
+            <Card key={card.id} image={card.image} name={card.name} />
+          ))}
+        </div>
       </div>
     );
   }
