@@ -1,0 +1,11 @@
+.card-body{
+  position: relative;
+  margin-top: 1rem;
+}
+
+.card{
+  margin-top: 2rem;
+  position: absolute;
+  right: 44%;
+  top: 2rem;
+}
