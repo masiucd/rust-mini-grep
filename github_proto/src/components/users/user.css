@@ -1,0 +1,71 @@
+
+@keyframes rotate {0%{transform:rotate(360deg)}}
+@keyframes wink {50%{opacity:0}}
+.grid{
+  display: grid;
+  grid-template-columns: repeat( auto-fit, minmax(550px, 1fr) );
+  grid-template-rows: auto;
+  grid-gap: 20px;
+  justify-items: center;
+}
+
+form {
+  display: block;
+  margin: 0 auto;
+  width: 100%;
+  text-align: center;
+}
+
+form .input{
+  border: 3px solid #000;
+  width: 80%;
+  margin: 1rem auto;
+  display: block;
+  padding: .8rem 1.1rem;
+  border-radius: 1rem;
+}
+
+form button{
+  display: block;
+  margin: 0 auto;
+
+}
+
+.button {
+  display: block !important;
+  margin: 0 auto;
+}
+
+
+
+.loading {
+  width:7em;
+  margin:3em auto;
+	position:relative;
+}
+
+.loading::before{
+  content:"";
+		display:block;
+    width:7em;
+    height:1em;
+    margin:3em auto;
+    padding:3em 0;
+    border-radius:50%;
+    border:2px solid #2f416f;
+    border-top:2px solid transparent;
+    border-bottom:2px solid transparent;
+    animation:rotate 1s ease infinite;
+}
+
+.loading::after{
+  content:"Loading";
+    position:absolute;
+		top:0;
+    color:#2f416f;
+    font:.9em sans-serif;
+    width:8em;
+    line-height:8em;
+    text-align:center;
+    animation:wink 1.4s ease infinite;
+}
