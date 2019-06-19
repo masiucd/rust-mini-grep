@@ -13,6 +13,7 @@ export default function App() {
   const [user, setUser] = useState({});
   const [loading, setLoading] = useState(false);
   const [alert, setAlert] = useState(null);
+  const [repos, setRepos] = useState([]);
 
   const searchUsers = async text => {
     setLoading(true);
@@ -37,7 +38,6 @@ export default function App() {
   };
 
   // get singel user
-
   const getUser = async username => {
     setLoading(true);
     const res = await api.get(
@@ -46,6 +46,17 @@ export default function App() {
       }&client_secret=${process.env.REACT_APP_GITHUB_CLIENT_SECRET}`
     );
     setUser(res.data);
+    setLoading(false);
+  };
+
+  const getUserRepos = async username => {
+    setLoading(true);
+    const res = await api.get(
+      `users/${username}/repos?per_page=5&sort=created:asc&client_id=${
+        process.env.REACT_APP_GITHUB_CLIENT_ID
+      }&client_secret=${process.env.REACT_APP_GITHUB_CLIENT_SECRET}`
+    );
+    setRepos(res.data);
     setLoading(false);
   };
 
@@ -78,7 +89,9 @@ export default function App() {
               <UserProfile
                 {...props}
                 getUser={getUser}
+                getUserRepos={getUserRepos}
                 user={user}
+                repos={repos}
                 loading={loading}
               />
             )}

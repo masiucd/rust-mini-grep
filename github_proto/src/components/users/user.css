@@ -78,6 +78,11 @@ form button{
 .profilecard{
   margin: 0 auto !important;
   position: relative;
+  width: 100% !important;
+}
+
+.hireable-wrapper{
+  position: absolute;
 }
 
 .profilecard .bio {
@@ -111,4 +116,13 @@ form button{
   position: absolute;
   top: 112px;
   right:  0;
+}
+
+
+.repos-card a{
+  color: #2f416f;
+}
+
+.repos-card a:hover {
+  text-decoration: none;
 }

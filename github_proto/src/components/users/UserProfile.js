@@ -1,11 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
+import Repos from '../repos/Repos';
 
 class UserProfile extends React.Component {
   componentDidMount() {
-    const { getUser } = this.props;
-    this.props.getUser(this.props.match.params.login);
+    const { getUser, getUserRepos } = this.props;
+    getUser(this.props.match.params.login);
+    getUserRepos(this.props.match.params.login);
   }
 
   render() {
@@ -24,28 +26,30 @@ class UserProfile extends React.Component {
       company,
       public_gists,
     } = this.props.user;
-    const { loading } = this.props;
+    const { loading, repos } = this.props;
     if (loading) {
       return <div className="loading" />;
     }
     return (
-      <>
-        <Link to="/" className="btn btn-info ">
-          Back to users
-        </Link>
-        <span className="mx-2" style={{ fontSize: 18 }}>
-          Hireable :
-        </span>{' '}
-        {hireable ? (
-          <>
-            <i className="fas fa-check-circle text-success fa-lg" />
-          </>
-        ) : (
-          <>
-            <i className="fas fa-times-circle text-danger fa-lg" />
-          </>
-        )}
-        <div className="card col-md-7 text-center profilecard mt-5 ">
+      <div className="container">
+        <div className="card col-md-12 text-center profilecard mt-5 ">
+          <div className="hireable-wrapper">
+            <Link to="/" className="btn btn-info ">
+              Back to users
+            </Link>
+            <h4 className="mx-2 mt-3 " style={{ fontSize: 18 }}>
+              Hireable :
+            </h4>{' '}
+            {hireable ? (
+              <>
+                <i className="fas fa-check-circle text-success fa-lg" />
+              </>
+            ) : (
+              <>
+                <i className="fas fa-times-circle text-danger fa-lg" />
+              </>
+            )}
+          </div>
           <div className="all-center">
             <img
               src={avatar_url}
@@ -103,12 +107,18 @@ class UserProfile extends React.Component {
             Public Gists: {public_gists}
           </div>
 
-          <a href={html_url} className="btn btn-dark text-white">
+          <a
+            href={html_url}
+            target="_blank"
+            className="btn btn-dark text-white"
+          >
             {' '}
             Visit Github Profile
           </a>
         </div>
-      </>
+        <h3 className="text-center my-5">{name}s Github Repos</h3>
+        <Repos repos={repos} />
+      </div>
     );
   }
 }
@@ -117,7 +127,8 @@ export default UserProfile;
 
 UserProfile.propTypes = {
   getUser: PropTypes.func.isRequired,
-  match: PropTypes.object,
   user: PropTypes.object.isRequired,
   loading: PropTypes.bool.isRequired,
+  getUserRepos: PropTypes.func.isRequired,
+  repos: PropTypes.array.isRequired,
 };
