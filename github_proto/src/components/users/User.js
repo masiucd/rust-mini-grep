@@ -6,8 +6,8 @@ import {
   CardBody,
   CardTitle,
   CardSubtitle,
-  Button,
 } from 'reactstrap';
+import { Link } from 'react-router-dom';
 
 const User = ({ user: { login, avatar_url } }) => {
   let a;
@@ -38,7 +38,9 @@ const User = ({ user: { login, avatar_url } }) => {
               obcaecati! Perspiciatis.
             </p>
           </CardText>
-          <Button>Button</Button>
+          <Link to={`/user/${login}`} className="btn btn-info">
+            User Profile
+          </Link>
         </CardBody>
       </Card>
     </div>

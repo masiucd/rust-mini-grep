@@ -6,11 +6,13 @@
   background: steelblue;
   display: flex;
   position: relative;
-  padding: 1.3rem;
+  padding: .3rem;
 }
 
 .nav h4:nth-child(1) {
-  margin: 0 1rem;
+  margin: 0 1rem ;
+  position: relative;
+  top: 27px;
 }
 
 .nav-list{
@@ -19,6 +21,16 @@
   justify-content: flex-end
 }
 
+.nav {
+  color: #fff;
+}
+
+.nav i{
+  font-size: 2rem;
+  color: #fff;
+  position: relative;
+  top: 27px;
+}
 .nav-list a {
   color: #fff;
   margin: 0 1rem;
@@ -26,7 +38,8 @@
   text-decoration: none !important;
 }
 .nav-list a:hover {
-  color: rgb(39, 30, 43);
+  color: rgb(329, 230, 143);
+  transform: scale(1.1);
   margin: 0 1rem;
 }
 

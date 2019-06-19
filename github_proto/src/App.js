@@ -3,12 +3,14 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Layout from './components/layout/Layout';
 import Users from './components/users/Users';
 import Search from './components/users/Search';
+import UserProfile from './components/users/UserProfile';
 import api from './api';
 import About from './components/pages/About';
 import Alert from './components/Alert';
 
 export default function App() {
   const [users, setUsers] = useState([]);
+  const [user, setUser] = useState({});
   const [loading, setLoading] = useState(false);
   const [alert, setAlert] = useState(null);
 
@@ -34,6 +36,19 @@ export default function App() {
     }, 4000);
   };
 
+  // get singel user
+
+  const getUser = async username => {
+    setLoading(true);
+    const res = await api.get(
+      `users/${username}?client_id=${
+        process.env.REACT_APP_GITHUB_CLIENT_ID
+      }&client_secret=${process.env.REACT_APP_GITHUB_CLIENT_SECRET}`
+    );
+    setUser(res.data);
+    setLoading(false);
+  };
+
   const checkUsers = users.length > 0;
 
   return (
@@ -57,6 +72,17 @@ export default function App() {
             )}
           />
           <Route path="/about" component={About} />
+          <Route
+            path="/user/:login"
+            render={props => (
+              <UserProfile
+                {...props}
+                getUser={getUser}
+                user={user}
+                loading={loading}
+              />
+            )}
+          />
         </Switch>
       </Layout>
     </Router>
