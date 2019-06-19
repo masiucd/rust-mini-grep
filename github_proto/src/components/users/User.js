@@ -23,11 +23,20 @@ const User = ({ user: { login, avatar_url } }) => {
         />
 
         <CardBody>
-          <CardTitle>{login}</CardTitle>
-          <CardSubtitle>Awesome github user named by : {login}</CardSubtitle>
+          <CardTitle className="user-img">
+            <h3>{login}</h3>
+          </CardTitle>
+          <CardSubtitle>
+            Awesome github user named by :{' '}
+            <h4 style={{ fontSize: '2rem' }}>{login} </h4>{' '}
+          </CardSubtitle>
           <CardText>
-            Some quick example text to build on the card title and make up the
-            bulk of the card's content.
+            <p className="card-text">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam,
+              tenetur! Natus consequuntur fugit veniam dolores hic omnis ad
+              asperiores! Harum officia ut itaque sequi, eum id voluptas vero
+              obcaecati! Perspiciatis.
+            </p>
           </CardText>
           <Button>Button</Button>
         </CardBody>

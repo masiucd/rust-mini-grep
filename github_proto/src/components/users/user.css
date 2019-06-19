@@ -69,3 +69,8 @@ form button{
     text-align:center;
     animation:wink 1.4s ease infinite;
 }
+
+
+.card-text {
+  max-width: 90%;
+}

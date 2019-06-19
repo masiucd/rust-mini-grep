@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { Collapse, Navbar, NavbarToggler, NavbarBrand, Nav } from 'reactstrap';
+import { Link } from 'react-router-dom';
+import links from '../../links';
 
 function Navigation({ title, title2 }) {
   const [collapsed, setCollapsed] = useState(false);
@@ -8,19 +9,17 @@ function Navigation({ title, title2 }) {
     setCollapsed(collapsed => !collapsed);
   };
   return (
-    <div>
-      <Navbar color="faded" light className="bg-dark">
-        <NavbarBrand href="/" className="mr-auto  text-white">
-          {title}
-        </NavbarBrand>
-        <NavbarToggler onClick={toggleNavbar} className="mr-2 text-white" />
-        <Collapse isOpen={!collapsed} navbar>
-          <Nav navbar className="text-white">
-            <h4 style={{ color: '#fff' }}>{title2}</h4>
-          </Nav>
-        </Collapse>
-      </Navbar>
-    </div>
+    <nav className="nav">
+      <h4> {title}</h4>
+      <h4 style={{ color: '#fff' }}>{title2}</h4>
+      <ul className="nav-list">
+        {links.map((link, inx) => (
+          <Link key={inx} to={link.to}>
+            {link.text}
+          </Link>
+        ))}
+      </ul>
+    </nav>
   );
 }
 

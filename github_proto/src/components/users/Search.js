@@ -13,8 +13,13 @@ export default class Search extends Component {
   };
 
   handleSubmit = e => {
+    const { text } = this.state;
+    const { settingAlert, searchUsers } = this.props;
     e.preventDefault();
-    this.props.searchUsers(this.state.text);
+    if (text === '') {
+      settingAlert('Please enter something', 'danger');
+    }
+    searchUsers(text);
     this.setState({ text: '' });
   };
 
@@ -54,4 +59,6 @@ export default class Search extends Component {
 Search.propTypes = {
   clearUsers: PropTypes.func.isRequired,
   checkUsers: PropTypes.bool.isRequired,
+  settingAlert: PropTypes.func.isRequired,
+  searchUsers: PropTypes.func.isRequired,
 };
