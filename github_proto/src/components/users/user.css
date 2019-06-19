@@ -74,3 +74,41 @@ form button{
 .card-text {
   max-width: 90%;
 }
+
+.profilecard{
+  margin: 0 auto !important;
+  position: relative;
+}
+
+.profilecard .bio {
+  display: block !important;
+  margin: 0 auto;
+  max-width: 40%;
+  line-height: 1.7;
+}
+
+.followers{
+  width: 25%;
+
+}
+
+.badge-one{
+  position: absolute;
+  top: 22px;
+  right:  0;
+}
+.badge-two{
+  position: absolute;
+  top: 52px;
+  right:  0;
+}
+.badge-three{
+  position: absolute;
+  top: 82px;
+  right:  0;
+}
+.badge-four{
+  position: absolute;
+  top: 112px;
+  right:  0;
+}
