@@ -22,14 +22,17 @@ impl Config {
 
 pub fn run(config: Config) -> Result<(), Box<dyn Error>> {
   let contents = fs::read_to_string(config.filename.as_str())?;
-  println!("With text:\n{}", contents);
+  let result = search(&config.query, &contents);
+  for line in result {
+    println!("{}", line);
+  }
   Ok(())
 }
 
 pub fn search<'a>(query: &str, contents: &'a str) -> Vec<&'a str> {
   let mut result = Vec::new();
   for line in contents.lines() {
-    if line.contains(query) {
+    if line.to_lowercase().contains(query.to_lowercase().as_str()) {
       result.push(line.trim());
     }
   }
